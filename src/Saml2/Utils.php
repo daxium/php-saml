@@ -601,12 +601,15 @@ class Utils
     {
         $selfURLNoQuery = self::getSelfURLhost();
 
-        $infoWithBaseURLPath = self::buildWithBaseURLPath($_SERVER['SCRIPT_NAME']);
-        if (!empty($infoWithBaseURLPath)) {
-            $selfURLNoQuery .= $infoWithBaseURLPath;
-        } else {
+        //
+        // DAXIUM - Comment this to not cut URL paths from /xxx/yyy/zzz to only /zzz
+        //
+        // $infoWithBaseURLPath = self::buildWithBaseURLPath($_SERVER['SCRIPT_NAME']);
+        // if (!empty($infoWithBaseURLPath)) {
+        //     $selfURLNoQuery .= $infoWithBaseURLPath;
+        // } else {
             $selfURLNoQuery .= $_SERVER['SCRIPT_NAME'];
-        }
+        // }
 
         if (isset($_SERVER['PATH_INFO'])) {
             $selfURLNoQuery .= $_SERVER['PATH_INFO'];
@@ -635,10 +638,13 @@ class Utils
             }
         }
 
-        $infoWithBaseURLPath = self::buildWithBaseURLPath($route);
-        if (!empty($infoWithBaseURLPath)) {
-            $route = $infoWithBaseURLPath;
-        }
+        //
+        // DAXIUM - Comment this to not cut URL paths from /xxx/yyy/zzz to only /zzz
+        //
+        // $infoWithBaseURLPath = self::buildWithBaseURLPath($route);
+        // if (!empty($infoWithBaseURLPath)) {
+        //     $route = $infoWithBaseURLPath;
+        // }
 
         $selfRoutedURLNoQuery = $selfURLhost . $route;
 
@@ -679,10 +685,13 @@ class Utils
             }
         }
 
-        $infoWithBaseURLPath = self::buildWithBaseURLPath($requestURI);
-        if (!empty($infoWithBaseURLPath)) {
-            $requestURI = $infoWithBaseURLPath;
-        }
+        //
+        // DAXIUM - Comment this to not cut URL paths from /xxx/yyy/zzz to only /zzz
+        //
+        // $infoWithBaseURLPath = self::buildWithBaseURLPath($requestURI);
+        // if (!empty($infoWithBaseURLPath)) {
+        //     $requestURI = $infoWithBaseURLPath;
+        // }
 
         return $selfURLhost . $requestURI;
     }
