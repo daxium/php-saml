@@ -605,12 +605,15 @@ class OneLogin_Saml2_Utils
     {
         $selfURLNoQuery = self::getSelfURLhost();
 
-        $infoWithBaseURLPath = self::buildWithBaseURLPath($_SERVER['SCRIPT_NAME']);
-        if (!empty($infoWithBaseURLPath)) {
-            $selfURLNoQuery .= $infoWithBaseURLPath;
-        } else {
+        //
+        // DAXIUM - REMOVE THIS IN ORDER TO ALLOW /xxx/yyy/zzz paths and not only /zzz paths
+        //
+        // $infoWithBaseURLPath = self::buildWithBaseURLPath($_SERVER['SCRIPT_NAME']);
+        // if (!empty($infoWithBaseURLPath)) {
+        //     $selfURLNoQuery .= $infoWithBaseURLPath;
+        // } else {
             $selfURLNoQuery .= $_SERVER['SCRIPT_NAME'];
-        }
+        // }
 
         if (isset($_SERVER['PATH_INFO'])) {
             $selfURLNoQuery .= $_SERVER['PATH_INFO'];
@@ -685,10 +688,13 @@ class OneLogin_Saml2_Utils
             }
         }
 
-        $infoWithBaseURLPath = self::buildWithBaseURLPath($requestURI);
-        if (!empty($infoWithBaseURLPath)) {
-            $requestURI = $infoWithBaseURLPath;
-        }
+        //
+        // DAXIUM - REMOVE THIS IN ORDER TO ALLOW /xxx/yyy/zzz paths and not only /zzz paths
+        //
+        // $infoWithBaseURLPath = self::buildWithBaseURLPath($requestURI);
+        // if (!empty($infoWithBaseURLPath)) {
+        //     $requestURI = $infoWithBaseURLPath;
+        // }
 
         return $selfURLhost . $requestURI;
     }
