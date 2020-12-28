@@ -1,18 +1,18 @@
 {
-    "name": "onelogin/php-saml",
-    "description": "OneLogin PHP SAML Toolkit",
+    "name": "daxium/php-saml",
+    "description": "Daxium Fork of OneLogin PHP SAML Toolkit",
     "license": "MIT",
     "homepage": "https://developers.onelogin.com/saml/php",
-    "keywords": ["saml", "saml2", "onelogin"],
+    "keywords": ["saml", "saml2", "onelogin", "daxium"],
     "autoload": {
         "psr-4": {
             "OneLogin\\": "src/"
         }
     },
     "support": {
-        "email": "sixto.garcia@onelogin.com",
-        "issues": "https://github.com/onelogin/php-saml/issues",
-        "source": "https://github.com/onelogin/php-saml/"
+        "email": "techies@daxium.com",
+        "issues": "https://github.com/daxium/php-saml/issues",
+        "source": "https://github.com/daxium/php-saml/"
     },
     "require": {
         "php": ">=5.4",
