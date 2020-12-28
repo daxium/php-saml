@@ -639,10 +639,13 @@ class OneLogin_Saml2_Utils
             }
         }
 
-        $infoWithBaseURLPath = self::buildWithBaseURLPath($route);
-        if (!empty($infoWithBaseURLPath)) {
-            $route = $infoWithBaseURLPath;
-        }
+        //
+        // DAXIUM - REMOVE THIS IN ORDER TO ALLOW /xxx/yyy/zzz paths and not only /zzz paths
+        //
+        // $infoWithBaseURLPath = self::buildWithBaseURLPath($route);
+        // if (!empty($infoWithBaseURLPath)) {
+        //     $route = $infoWithBaseURLPath;
+        // }
 
         $selfRoutedURLNoQuery = $selfURLhost . $route;
 
